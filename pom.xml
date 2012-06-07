@@ -28,7 +28,7 @@
       <url>http://jflex.sourceforge.net/repo/</url>
     </pluginRepository>
   </pluginRepositories>
-  
+
   <build>
     <plugins>
       <plugin>
@@ -45,7 +45,7 @@
         <configuration>
           <excludes>
             <exclude>**/Thumbs.db</exclude>
-          </excludes>        
+          </excludes>
           <archive>
             <manifest>
               <mainClass>jsyntaxpane.SyntaxTester</mainClass>
