@@ -21,14 +21,6 @@
     <url>http://jsyntaxpane.googlecode.com/svn/</url>
   </scm>
 
-  <pluginRepositories>
-    <pluginRepository>
-      <id>jflex</id>
-      <name>JFlex repository</name>
-      <url>http://jflex.sourceforge.net/repo/</url>
-    </pluginRepository>
-  </pluginRepositories>
-
   <build>
     <plugins>
       <plugin>
@@ -62,7 +54,7 @@
       <plugin>
         <groupId>de.jflex</groupId>
         <artifactId>maven-jflex-plugin</artifactId>
-        <!--version>0.2</version-->
+        <version>1.4.3</version>
         <executions>
           <execution>
             <goals>
