@@ -89,9 +89,6 @@ public class CompoundUndoMan extends UndoManager {
 	 **  (ie. each character typed or backspaced is an incremental edit)
 	 */
 	private CompoundEdit startCompoundEdit(UndoableEdit anEdit) {
-		//  Track Caret and Document information of this compound edit
-		AbstractDocument.DefaultDocumentEvent docEvt = (DefaultDocumentEvent) anEdit;
-
 		//  The compound edit is used to store incremental edits
 
 		compoundEdit = new MyCompoundEdit();
