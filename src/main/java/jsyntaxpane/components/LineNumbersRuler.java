@@ -127,7 +127,9 @@ public class LineNumbersRuler extends JPanel
 		editor.addCaretListener(this);
 		editor.addPropertyChangeListener(this);
 		JScrollPane sp = getScrollPane(editor);
-		sp.setRowHeaderView(this);
+		if (sp != null) {
+		    sp.setRowHeaderView(this);    
+		}
 		mouseListener = new MouseAdapter() {
 
 			@Override
