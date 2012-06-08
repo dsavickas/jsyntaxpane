@@ -13,7 +13,6 @@
  */
 package jsyntaxpane;
 
-import java.awt.Color;
 import java.awt.event.ItemEvent;
 import java.io.IOException;
 import java.io.StringReader;
