@@ -24,13 +24,22 @@ import jsyntaxpane.util.Configuration;
  */
 public class MinimalSyntaxEditorKit extends DefaultEditorKit implements ViewFactory {
     private final Lexer lexer;
+    private final Configuration configuration;
 
     public MinimalSyntaxEditorKit(Lexer lexer) {
+        this(lexer, createDefaultConfiguration());
+    }
+    
+    public MinimalSyntaxEditorKit(Lexer lexer, Configuration configuration) {
         super();
         if (lexer == null) {
             throw new IllegalArgumentException("lexer cannot be null");
         }
+        if (configuration == null) {
+            throw new IllegalArgumentException("configuration cannot be null");
+        }
         this.lexer = lexer;
+        this.configuration = configuration; 
     }
     
     @Override
@@ -45,10 +54,10 @@ public class MinimalSyntaxEditorKit extends DefaultEditorKit implements ViewFact
 
     @Override
     public View create(Element element) {
-        return new SyntaxView(element, this.getConfig());
+        return new SyntaxView(element, this.configuration);
     }
 
-    private Configuration getConfig() {
+    private static Configuration createDefaultConfiguration() {
         Configuration configuration = new Configuration(MinimalSyntaxEditorKit.class);
         Map<String, String> values = new HashMap<String, String>();
         values.put("Style.OPERATOR", "0x000000, 0");
