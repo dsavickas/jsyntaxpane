@@ -111,8 +111,6 @@ YYINITIAL. */
   "Inf"      |
   "..." { return token(TokenType.KEYWORD); }
 
-  "NULL" { return token(TokenType.TYPE); }
-
   // data types
   "matrix"       |
   "data.frame"   |
