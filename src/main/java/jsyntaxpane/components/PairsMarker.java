@@ -32,10 +32,10 @@ import jsyntaxpane.util.Configuration;
  * @author Ayman Al-Sairafi
  */
 public class PairsMarker implements CaretListener, SyntaxComponent, PropertyChangeListener {
-
     public static final String PROPERTY_COLOR = "PairMarker.Color";
+    private static final Color DEFAULT_MARKER_COLOR = new Color(0xeeee33);
     private JTextComponent pane;
-    private Markers.SimpleMarker marker;
+    private Markers.SimpleMarker marker = new Markers.SimpleMarker(DEFAULT_MARKER_COLOR);
     private Status status;
 
     public PairsMarker() {
@@ -66,7 +66,7 @@ public class PairsMarker implements CaretListener, SyntaxComponent, PropertyChan
 
     @Override
     public void config(Configuration config) {
-        Color markerColor = config.getColor(PROPERTY_COLOR, new Color(0xeeee33));
+        Color markerColor = config.getColor(PROPERTY_COLOR, DEFAULT_MARKER_COLOR);
         this.marker = new Markers.SimpleMarker(markerColor);
     }
 
