@@ -18,7 +18,8 @@
   </licenses>
 
   <scm>
-    <url>http://jsyntaxpane.googlecode.com/svn/</url>
+    <url>https://github.com/dsavickas/jsyntaxpane</url>
+    <connection>scm:git:https://github.com/dsavickas/jsyntaxpane.git</connection>
   </scm>
 
   <build>
