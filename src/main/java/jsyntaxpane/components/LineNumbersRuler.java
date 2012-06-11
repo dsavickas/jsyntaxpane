@@ -122,7 +122,7 @@ public class LineNumbersRuler extends JPanel
 		setFont(editor.getFont());
 
 		// setMinimumDisplayDigits(3);
-
+		setPreferredWidth();
 		editor.getDocument().addDocumentListener(this);
 		editor.addCaretListener(this);
 		editor.addPropertyChangeListener(this);
