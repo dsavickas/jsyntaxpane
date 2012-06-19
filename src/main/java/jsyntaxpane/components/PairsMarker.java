@@ -46,12 +46,14 @@ public class PairsMarker implements CaretListener, SyntaxComponent, PropertyChan
         removeMarkers();
         int pos = e.getDot();
         SyntaxDocument doc = ActionUtils.getSyntaxDocument(pane);
-        Token token = doc.getTokenAt(pos);
-        if (token != null && token.pairValue != 0) {
-            Markers.markToken(pane, token, marker);
-            Token other = doc.getPairFor(token);
-            if (other != null) {
-                Markers.markToken(pane, other, marker);
+        if (doc != null) {
+            Token token = doc.getTokenAt(pos);
+            if (token != null && token.pairValue != 0) {
+                Markers.markToken(pane, token, marker);
+                Token other = doc.getPairFor(token);
+                if (other != null) {
+                    Markers.markToken(pane, other, marker);
+                }
             }
         }
     }
